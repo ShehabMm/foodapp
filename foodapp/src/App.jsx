@@ -3,13 +3,21 @@ import Search from './Components/Search';
 import Foodlist from './Components/Foodlist';
 import { useState } from 'react';
 import Nav from './Components/Nav';
+import MoreDetails from './Pages/MoreDetails';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home'
 function App() {
-const [fooddata, setfooddata]=useState([])
   return (
     <div className="App">
-      <Nav/>
-      <Search   fooddata={fooddata}   setfooddata={setfooddata}    />
-      <Foodlist   fooddata={fooddata} />
+    
+
+
+      <Routes>
+      <Route path="/" element={<Home/>} />
+
+        <Route path="/details" element={<MoreDetails/>} />
+
+      </Routes>
     </div>
   )
 }

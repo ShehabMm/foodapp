@@ -18,7 +18,7 @@ function Foodlist({ fooddata }) {
                         <h3 key={item.id}>{item.title}</h3>
                         <button className={styles.itembutton} onClick={()=>{
 console.log(item.id);
-navigate('./FoodDetails')
+navigate("./details", {state:item.id})
 
                         }}  >View Item details</button>
                     </div>
