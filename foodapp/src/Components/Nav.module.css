@@ -1,0 +1,12 @@
+.navbar{
+background-color: bisque;
+font-size: 2em;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+max-height: 20%;
+margin: 0;
+color: #393e46;
+padding:30px;
+box-shadow: 0 4px 6px rgba(0, 0,0,0.2);
+margin-bottom: 40px;
+}
