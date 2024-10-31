@@ -28,6 +28,7 @@ flex-direction: column;
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s ease-in-out;
+    border-radius: 10px;
 }
 .itembutton:active{
     scale: 1.2;

@@ -1,29 +1,36 @@
 import styles from './Foodlist.module.css'
-function Foodlist({fooddata}){
+import { useNavigate } from "react-router-dom";
+
+function Foodlist({ fooddata }) {
 
 
+    const navigate = useNavigate();
 
-return (
-<div className={styles.bigContainer}>
+    return (
+        <div className={styles.bigContainer}>
 
-{fooddata.map((item)=>{
+            {fooddata.map((item) => {
 
-return(
-<div className={styles.foodlist}>
-<img width="200px" height="250px" style={{marginTop:"10px"}} src={item.image} alt="" />
+                return (
+                    <div className={styles.foodlist}>
+                        <img width="200px" height="250px" style={{ marginTop: "10px" }} src={item.image} alt="" />
 
-<h3 key={item.id}>{item.title}</h3>
-<button className={styles.itembutton}>View Item details</button>
-</div>
-)
+                        <h3 key={item.id}>{item.title}</h3>
+                        <button className={styles.itembutton} onClick={()=>{
+console.log(item.id);
+navigate('./FoodDetails')
+
+                        }}  >View Item details</button>
+                    </div>
+                )
 
 
-})}
+            })}
 
 
-</div>
+        </div>
 
-)
+    )
 
 
 }
