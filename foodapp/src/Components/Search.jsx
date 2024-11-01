@@ -9,9 +9,7 @@ function Search({ fooddata, setfooddata }) {
   useEffect(() => {
     async function getdata() {
       const res = await axios.get("https://fakestoreapi.com/products/");
-      console.log(res.data);
       setfooddata(res.data);
-      console.log(fooddata);
     }
     getdata();
   }, []);
