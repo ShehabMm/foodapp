@@ -4,9 +4,9 @@ import Search from '../Components/Search';
 import Foodlist from '../Components/Foodlist';
 import { useState } from 'react';
 
+
 function Home() {
     const [fooddata, setfooddata] = useState([])
-
     return (
         <div>
 

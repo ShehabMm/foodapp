@@ -1,11 +1,12 @@
 import styles from './Foodlist.module.css'
 import { useNavigate } from "react-router-dom";
 
+
 function Foodlist({ fooddata }) {
 
 
     const navigate = useNavigate();
-
+    
     return (
         <div className={styles.bigContainer}>
 
@@ -25,7 +26,6 @@ navigate("./details", {state:item.id})
 
 
             })}
-
 
         </div>
 
