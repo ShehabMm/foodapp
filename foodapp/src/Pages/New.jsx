@@ -21,7 +21,7 @@ function New() {
 
   const handleChecked = (index) => {
     const updated = [...array1];
-    updated[index].checked = !updated[index].checked;
+    updated[index].checked =!updated[index].checked;
     setarray1(updated);
   };
 
@@ -74,7 +74,7 @@ const myId = Math.round()
           handleC();
         }}
       >
-        Swap wow{" "}
+        Swap wow
       </button>
 
       <select>

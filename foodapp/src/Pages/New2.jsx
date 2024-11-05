@@ -1,65 +1,45 @@
-import React, { useLayoutEffect, useState } from "react";
+import styles from "./New2.module.css";
+import {useState, } from 'react'
+
 
 function New2() {
-  const arr = [
-    { name: "play cricket", check: false },
-    { name: "play video games", check: false },
-    { name: "read books", check: false },
-  ];
-  const [copy, setcopy] = useState(arr);
-  const [hidden, sethidden] = useState("none");
-const [lol, setlol]=useState(false)
-  const handleDelete = (index) => {
-    let updated = copy.filter((item, inx) => {
-      return inx != index;
-    });
 
-    setcopy(updated);
-  };
 
-const selected=(e,emplo)=>{
-console.log( e.target.checked  ); 
-if(lol){
-e.target.checked===true
+const countries = [{name:"Choose Country", value:"IN", cities:[]}, {name:"india", value:"IN", cities:["dlehi", "mombai"]},{name:"Egypt", value:"IN", cities:["cairo", "giza"]}, {name:"England", value:"IN", cities:["califonia","tobo"]}]
+const[country, setCountry]=useState()
+  return <div className={styles.contianer}> 
+  <h1>Hello World</h1>
+  <select onChange={(e)=>{
 
-}
-}
-  return (
-    <div>
-      {copy.map((emplo, index) => {
-        return (
-          <ul key={Math.random()}>
-            <li style={{ listStyleType: "none" }}>
-              <input
-              checked={lol}
-              name={emplo.name}
-              value=""
-                onChange={(e) => {
-                  selected(e,emplo);
-                }}
-                type="checkbox"
-              />
+ console.log(e.target.value);
+    setCountry(e.target.value)
+  }}     >
 
-              {emplo.name}
+  {countries.map((item, index)=>{
 
-              <button
-                style={{display:hidden }}
-                onClick={(e) => handleDelete(e)}
-              >
-                delete
-              </button>
-            </li>
-          </ul>
 
-        );
-      })}
-                              <button onClick={()=>{
+return (
 
-setlol(!lol)
-                              }} >select all</button>
 
-    </div>
-  );
+  <option value={index}  key={item.name}>{item.name}</option>
+
+)
+
+
+  })}
+  </select>
+
+  {/* second dropdown */}
+  <select>
+
+ {country &&countries[country].cities.map((item, index)=>{
+
+return (<option key={index}>{item}</option>
+)
+
+  })} 
+</select>
+  </div>
 }
 
-export default New2;
+export default New2
